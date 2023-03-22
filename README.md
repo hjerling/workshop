@@ -21,10 +21,10 @@ You don't need to follow these instructions to the point. The important thing is
 const square = new Square(2);
 square.area = 25;
 ```
-## 2. Continue with other geometric shapes or skip to point 3
+## 2. Continue with other geometric shapes or skip to [point 3](#3-create-a-fizzbuzz-counter)
 - Create a Circle class with `area` and `perimeter` 
 - Create a Rectangle class with `area` and `perimeter`
-  - Use the Rectangle class to implement the Square class in point 1
+  - Use the Rectangle class to implement the Square class in [point 1](#1-finish-the-development-of-the-square-class)
 - Create a Triangle class with `area` and `perimeter`
   - Maybe use Heron's formula?
 
