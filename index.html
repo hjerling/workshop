@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Tests</title>
+
+  <link rel="stylesheet" href="https://workshop.snbll.ax/lib/jasmine-4.6.0/jasmine.css">
+
+  <script src="https://workshop.snbll.ax/lib/jasmine-4.6.0/jasmine.js"></script>
+  <script src="https://workshop.snbll.ax/lib/jasmine-4.6.0/jasmine-html.js"></script>
+  <script src="https://workshop.snbll.ax/lib/jasmine-4.6.0/boot0.js"></script>
+  <!-- optional: include a file here that configures the Jasmine env -->
+  <script src="https://workshop.snbll.ax/lib/jasmine-4.6.0/boot1.js"></script>
+
+  <!-- include source files here... -->
+  <script>
+class Square {
+  get area() {
+    return 16;
+  }
+}  
+
+</script>
+ 
+<script>
+describe('Square', () => {
+  it('creates a Square', () => {
+    const square = new Square(4);
+    expect(square).toBeDefined();
+  });
+
+  describe('area', () => {
+    it('calculates the area of the square with a side of length 4', () => {
+      const square = new Square(4);
+      expect(square.area).toBe(16);
+    });
+  })
+});
+
+</script>
+
+
+</head>
+
+<body>
+</body>
+</html>
