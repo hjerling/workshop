@@ -1,15 +1,15 @@
 # Workshop
 > Here are some instructions for a workshop on pair programming and TDD.
 
-The skeleton of the tests are in the [index.html](index.html) file. To run the tests, simply open [index.html](index.html) in the browser of your choosing.
+The skeleton for the tests are in the [index.html](index.html) file. To run the tests, simply open [index.html](index.html) in the browser of your choosing.
 
-The tests use [the jasmine framework](https://jasmine.github.io/). This is because it offers the simple in browser setup. 
+The tests use [the jasmine framework](https://jasmine.github.io/). This is because it offers the simple in browser setup which is helpful in a workshop scenario. [Other](https://mochajs.org/) [test](https://jestjs.io/) [frameworks](https://nightwatchjs.org/) [are](https://www.cypress.io/) [available](https://github.com/hapijs/lab).
 
 Please use [the jasmine documentation](https://jasmine.github.io/pages/docs_home.html) to further the tests when workshopping.
 Most of what is needed for this workshop can be found in [the jasmine API documentation](https://jasmine.github.io/api/4.6/global). 
 When asserting actual and expected values you should use [the matchers in the jasmine API documentation](https://jasmine.github.io/api/4.6/matchers.html).  
 
-You don't need to follow these instructions to the point. The important thing is that you code, in a pair, using TDD.
+You don't need to follow these instructions to the point. The important thing is that you code, in a pair, using TDD. But remember; you are two people working together, discuss your plan of action.
 
 ## 1. Finish the development of the Square class. 
 - Complete the Square class
@@ -21,11 +21,12 @@ You don't need to follow these instructions to the point. The important thing is
 ```js
 const square = new Square(2);
 square.area = 25;
+console.log('The perimeter of the square is', square.perimeter);
 ```
-## 2. Continue with other geometric shapes or skip to [point 3](#3-create-a-fizzbuzz-counter)
+## 2. Continue with other geometric shapes or skip to [section 3](#3-create-a-fizzbuzz-counter)
 - Create a Circle class with `area` and `perimeter` 
 - Create a Rectangle class with `area` and `perimeter`
-  - Use the Rectangle class to implement the Square class in [point 1](#1-finish-the-development-of-the-square-class)
+  - Use the Rectangle class to implement the Square class in [section 1](#1-finish-the-development-of-the-square-class)
 - Create a Triangle class with `area` and `perimeter`
   - Maybe use Heron's formula?
 
@@ -35,12 +36,20 @@ FizzBuzz is a game where you count from 1 to 100 and say "Fizz", "Buzz", "FizzBu
 - Say "Buzz" when the number is dividable by 5
 - Say "FizzBuzz" when the number is dividable by both 3 and 5
 - Say the number when the number isn't dividable by neither 3 nor 5
+So, based on the input number given, the FizzBuzz counter should count all the way up to that number.
 
+Sample FizzBuzz output:
+```
+1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz, Fizz, 22, 23, Fizz, Buzz, 26, Fizz, 28, 29, FizzBuzz, 31, 32, Fizz, 34, Buzz, Fizz, ...
+```
+Testing is a lot easier if you separate the calculation and the output. If I'm honest, I would probably skip the output part if I were you. The test will validate that the code does what it should without having to `console.log()` everything. 
 
 ---
 
 
 # Additional material 
+
+_Here is [a link to the corresponding presentation](https://docs.google.com/presentation/d/1Aupocog3Y5B1ZBhG5Cgc6_mS1CxKglX3c7fgX7UJ_SE/edit?usp=sharing)._
 
 ## Principles for productive pairing 
 
@@ -103,6 +112,5 @@ A brittle test is a test that fails when refactoring. This means that there is a
 ### Test your own code, not others (Unit test, at least)
 When using an external API in you code always make it return an expected result by using stubs, spies or mocks. Stubs, spies and mocks are important tools when testing. They allow you to test your own code with known parameters. It's not our job to test others code and it is important to keep your tests running even if the API isn't available.
 
-### Refactor when it has value
+### Refactor when it has value
 In certain cases it might not make sense for you to do any refactoring. But remember to always evaluate if it is worth refactoring.
-
